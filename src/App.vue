@@ -7,7 +7,6 @@
     </form>
     <ToDo v-for="(task, index) in tasks" :key = "index" :task="task"/>
     
-    <!-- слушаем события changeStatus и removeTask и вызываем соответствующие функции -->
     <task
       v-for="(task, index) in tasks"
       :key="index"
@@ -46,7 +45,7 @@ export default {
       }
     },
     removeAll() {
-      this.tasks = []; //можно проще, без splice'oв
+      this.tasks = [];
     },
     changeStatus(data) {
       this.tasks[data.index].status = data.status;
